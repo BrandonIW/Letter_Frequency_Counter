@@ -24,7 +24,7 @@ def main():
     sleep(1)
 
     _write_file(frequency, title)
-    print(f"Program End. See 'Frequencies.txt' to see letter frequencies for {title}")
+    print(f"Program End. See 'Frequencies.txt' to see letter frequencies for file {args.filename}")
 
 def _probability(letter_counter, total_num):
     frequencies = {char: round(num/total_num, 4) for char, num in letter_counter.items()}
@@ -80,8 +80,11 @@ class Book:
     @staticmethod
     def get_title(textfile):
         regex = re.compile(r'Title:\s(.*)')
-        title = regex.search(textfile).group(1)
-        return title
+        try:
+            title = regex.search(textfile).group(1)
+            return title
+        except AttributeError:
+            return "Unknown Title"
 
 
 if __name__ == '__main__':
