@@ -60,8 +60,9 @@ def _check_file(textfile):
             return textfile
     except IOError:
         raise argparse.ArgumentTypeError(f"{textfile} was found, but the file is not readable. Check permissions")
-
-
+    except UnicodeDecodeError:
+        raise argparse.ArgumentTypeError(f"{textfile} was found but some characters could not be decoded with UTF8. Check"
+                                         f"file type/extension.")
 class Book:
 
     def __init__(self, textfile):
