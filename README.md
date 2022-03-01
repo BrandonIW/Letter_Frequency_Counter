@@ -16,7 +16,7 @@ Tested on Windows 10
 ## Quickstart
 1) Download the .ZIP File and extract to a directory of your choice
 2) ```python3 main.py -f file.txt```
-3) i.e. ``` sudo python3 main.py -f ..\textfiles\dracula.txt```
+3) i.e. ``` python3 main.py -f ..\textfiles\dracula.txt```
 
 # Purpose
 This purpose of this program is to assist in letter frequency analysis as a cryptanalysis technique when looking at substitution ciphers. While ciphers such as the Caesar Cipher or Mono-alphabetic Ciphers may provide some level of obscurity, they are still vulnerable to frequency analysis, assuming the original plaintext was in English text. This is because certain letters appear far more frequently than others in the English language, such as the letter’s ‘e’, ‘t’, ‘a’ etc. 
